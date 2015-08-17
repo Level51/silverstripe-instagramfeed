@@ -1,0 +1,7 @@
+{
+  "name": "ss-modules/instagramfeed",
+  "description": "A SilverStripe module that brings a instagram feed to your homepage",
+  "version": "0.1.0",
+  "type": "silverstripe-module",
+  "require": {}
+}

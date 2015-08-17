@@ -1,0 +1,9 @@
+---
+Name: instagramfeed
+After:
+  - 'framework/*'
+  - 'cms/*'
+---
+SiteConfig:
+  extensions:
+    - InstagramSettings

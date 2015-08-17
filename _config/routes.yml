@@ -1,0 +1,8 @@
+---
+Name: instagramroutes
+After:
+  - 'framework/*'
+---
+Director:
+  rules:
+    'admin/instagram': 'InstagramActionController'
