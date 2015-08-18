@@ -27,9 +27,21 @@ class InstagramFeedPage extends Page {
         return $f->getUsersRecentMedia($limit);
     }
 
-    // Get the caption without the hashtags, usage in template with $stripCaption($caption)
-    public function stripCaption($caption){
-        return substr($caption, 0, strpos($caption, '#'));
+    // Get the caption without the hashtags and optional limited by $limit letters
+    public function stripCaption($caption, $limit = null){
+
+        // Remove the hash tags
+        $caption = substr($caption, 0, strpos($caption, '#'));
+
+        // Create a HTMLText
+        $sf = HTMLText::create('Caption');
+        $sf->setValue($caption);
+
+        // Optional: limit the characters
+        if ($limit != null)
+            return $sf->LimitCharacters($limit, '...');
+
+        return $sf;
     }
 
     // Get the date from given timestamp, formatted with strftime
